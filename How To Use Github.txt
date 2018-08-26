@@ -1,0 +1,22 @@
+# How to use Github.
+First open a new repository using the '+' icon on the right most corner.
+You can initialize your repo with a readme.md file.
+If you init your repo with a readme.md file it will not show your remote git link. To find it press the 'Clone or download button'. You will find a link which redirect to your current repository.
+Now to upload the source code first download the Git software for windows using this link https://git-scm.com/download/win . Install it.
+Right click on the local folder and start GitBash here.
+Write the following commands :
+	git init
+	git add . [Add all the files of that folder]
+	git commit -m 'First Commit'
+	git remote add origin <your remote git link>
+	git push -u origin master
+Now you can delete your local files.
+To edit the existing repository firstly create a local folder in your computer.
+Right click on the local folder and start GitBash here.
+Write the following commands :
+	git init
+	git remote add origin <your remote git link>
+	git pull origin master [This command will download all the files of your existing repository]
+	[Edit file / Add file]
+	git push origin master [Upload again]
+	
