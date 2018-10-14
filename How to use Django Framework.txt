@@ -12,6 +12,7 @@ To istall Database xampp in Django :
 				pip install pymysql
 				pip install mysqlclient
 				pip install mysql-connector-python-rf
+				pip install "mysqlclient==1.3.12"
 
   DATABASES = {
     'default':  
