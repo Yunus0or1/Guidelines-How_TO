@@ -43,4 +43,5 @@ To install tensorflow
 
 
 To add ImageField in Django Model run this command : pip install pillow
+To install Crypto package try this : pip install pycryptodome  / pip install pycrypto
 
