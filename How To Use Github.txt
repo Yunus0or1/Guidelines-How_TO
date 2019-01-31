@@ -18,5 +18,5 @@ Write the following commands :
 	git remote add origin <your remote git link>
 	git pull origin master [This command will download all the files of your existing repository]
 	[Edit file / Add file]
-	git push origin master [Upload again]
+	git push origin master [Upload again] 
 	
