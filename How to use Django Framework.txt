@@ -1,6 +1,6 @@
 Install python 3.6.39(32 bit) or 3.6.2(64 bit) with ticked on Add to the path.
 Install pycharm or not , it is upto you but must uncheck 'Add py extension'.
-To install Django run this command : pip install Django==1.11
+To install Django run this command : pip install Django
 Run the command to create project : Django-admin startproject prac
 To run the server go to the directory of the file and type this command : python manage.py runserver
 To create app go to the directory of the file and type this command : python manage.py startapp hello
