@@ -11,6 +11,7 @@ the project open CMD and cd to that directory. Then type these commands :
 
 
     composer install
+    composer dump-autoload
     copy .env.example .env  [To copy .env file]
 
     php artisan key:generate
