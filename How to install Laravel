@@ -19,6 +19,12 @@ the project open CMD and cd to that directory. Then type these commands :
     php artisan serve
     
     Go to localhost:8000
+    
+    
+ To be noticed : It can not be guranteed that these commands will run without any error. 
+ There is problem with different versions of Laravel.
+ If you face error please knock me by mail or 
+ Google this to sort out the problem. 
 
 
 
