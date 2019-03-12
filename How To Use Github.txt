@@ -1,4 +1,4 @@
-#### How to use Github.
+#### How to use Github. ####
 
 #First open a new repository using the '+' icon on the right most corner.
 You can initialize your repo with a readme.md file.
