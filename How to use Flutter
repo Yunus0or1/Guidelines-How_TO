@@ -1,0 +1,17 @@
+First download flutter by searching from Google.
+Install the zip file or whatever they provide you.
+Now to add flutter in cmd open up Environment Variables by searching 'Environment' in windows search bar.
+Double click on PATH in user variables and add your path. It must include bin folder. For example it can be 'C:\Flutter\bin'
+Restart your cmd.
+Install Android Studio. It will prompt for some packages to install for Flutter. Install these.
+Open up cmd and write this command 
+    
+    flutter doctor
+    
+If everything shows correctly with no error than flatter is installed properly.
+To start a new project in Flutter, open up cmd, browse to a directory and write this command 
+
+    flutter create project_name
+    
+
+   
