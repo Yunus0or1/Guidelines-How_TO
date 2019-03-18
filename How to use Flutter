@@ -13,5 +13,12 @@ To start a new project in Flutter, open up cmd, browse to a directory and write 
 
     flutter create project_name
     
+To run a project from cmd first of all plug your real android device or open up emulator device. Browse to the project directory,
+for example : cd /d D:/folder/firstapp and write this command 
+
+    flutter run
+    
+
+    
 
    
