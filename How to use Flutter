@@ -18,6 +18,8 @@ for example : cd /d D:/folder/firstapp and write this command
 
     flutter run
     
+To Hot Reload in CMD , press 'r'
+To restart the app again press 'R'
 
     
 
