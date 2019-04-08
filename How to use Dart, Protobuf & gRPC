@@ -1,4 +1,17 @@
-#Protocol Buffer
+# Dart 
+
+Install Dart from this link : https://www.dartlang.org/tools/sdk
+
+To install Dart project from command line use these commands : 
+
+    pub global activate stagehand
+    mkdir fancy_project
+    cd fancy_project
+    stagehand package-simple
+
+
+
+# Protocol Buffer
 
 Go to this link first to download ProtoC :
 
@@ -16,4 +29,12 @@ Start CMD and write this command :
     
 It should show libprotoc 3.7.1
 You have successfully installed Protocol Buffer.
+
+
+# Dart with ProtoBuf
+
+When installing a Dart project it will not have all the packages. So some commands must be executed in order to user Protocl Buffer
+in Dart. First write this command :
+  
+    pub global activate protoc_plugin
 
