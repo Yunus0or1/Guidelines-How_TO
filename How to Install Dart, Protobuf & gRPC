@@ -33,8 +33,42 @@ You have successfully installed Protocol Buffer.
 
 # Dart with ProtoBuf
 
-When installing a Dart project it will not have all the packages. So some commands must be executed in order to user Protocl Buffer
+When installing a Dart project it will not have all the packages. So some commands must be executed in order to use Protocl Buffer
 in Dart. First write this command :
   
     pub global activate protoc_plugin
+    
+To link all the packages between Dart and Procol Buffer use this command :
+
+    pub get [This will generate a .pacakages file which contains all local links of Dart libraries]
+    
+Now inside the Dart project create a folder named 'protos'. Write a .proto file inside it for example it is 'data.proto' . 
+And to produce ProtoBuf auto generated files write this command for Dart :
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
