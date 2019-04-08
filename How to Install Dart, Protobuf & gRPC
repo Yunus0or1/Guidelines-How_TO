@@ -42,11 +42,15 @@ To link all the packages between Dart and Procol Buffer use this command :
 
     pub get [This will generate a .pacakages file which contains all local links of Dart libraries]
     
-Now inside the Dart project create a folder named 'protos'. Write a .proto file inside it for example it is 'data.proto' . 
-And to produce ProtoBuf auto generated files write this command for Dart :
+Go to pubspec.yaml and add this under 'dev_dependencies' add this dependency :
 
-    
-    
+    protobuf: ^0.10.1
+    grpc: ^1.0.2
+
+Now inside the Dart project create a folder named 'protos'. Write a .proto file inside it for example it is 'data.proto' . 
+And to produce ProtoBuf auto generated with gRPC files write this command for Dart :
+
+    protoc --dart_out=grpc:. data.proto  [./lib2 means create auto generated files in same directory as data.proto resides]
 
 
 
