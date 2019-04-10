@@ -2,9 +2,12 @@
 
 Install Dart from this link : https://www.dartlang.org/tools/sdk
 
-To install Dart project from command line use these commands : 
+Install StageHand : 
 
     pub global activate stagehand
+
+To install Dart project from command line use these commands : 
+    
     mkdir fancy_project
     cd fancy_project
     stagehand package-simple
