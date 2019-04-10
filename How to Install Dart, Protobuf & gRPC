@@ -4,13 +4,13 @@ Install Dart from this link : https://www.dartlang.org/tools/sdk
 
 Install StageHand : 
 
-    pub global activate stagehand
+    pub global activate stagehand [only once. After installation no need to run this command again]
 
 To install Dart project from command line use these commands : 
     
-    mkdir fancy_project
-    cd fancy_project
-    stagehand package-simple
+    mkdir fancy_project [create directory]
+    cd fancy_project    [browse to directory]
+    stagehand package-simple [create Dart project which includes pubspec.yaml and many other files]
 
 
 
@@ -39,7 +39,7 @@ You have successfully installed Protocol Buffer.
 When installing a Dart project it will not have all the packages. So some commands must be executed in order to use Protocl Buffer
 in Dart. First write this command :
   
-    pub global activate protoc_plugin
+    pub global activate protoc_plugin  [only once to dowload Procol buffer plugin for Dart]
     
 To link all the packages between Dart and Procol Buffer use this command :
 
@@ -53,7 +53,7 @@ Go to pubspec.yaml and add this under 'dev_dependencies' add this dependency :
 Now inside the Dart project create a folder named 'protos'. Write a .proto file inside it for example it is 'data.proto' . 
 And to produce ProtoBuf auto generated with gRPC files write this command for Dart :
 
-    protoc --dart_out=grpc:. data.proto  [ . means create auto generated files in same directory as data.proto resides]
+    protoc --dart_out=grpc:lib data.proto  [ . means create auto generated files in same directory as data.proto resides]
 
 
 
