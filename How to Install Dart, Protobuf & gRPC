@@ -55,6 +55,25 @@ And to produce ProtoBuf auto generated with gRPC files write this command for Da
 
     protoc --dart_out=grpc:lib data.proto  [ . means create auto generated files in same directory as data.proto resides]
 
+--dart_out=grpc:lib means you are omitting auto generated proto files with grpc extension and the files will be saved under 
+lib/protos folder. The protos folder will be generated automatically [at least for my case]. You will find four files which have
+these extensions :
+
+    <your_proto_file_name>.pb.dart
+    <your_proto_file_name>.pbenum.dart
+    <your_proto_file_name>.pbgrpc.dart
+    <your_proto_file_name>.pbjson.dart
+
+### Important discussion: Why 'lib' folder is crucial for Dart.
+
+When you create a Dart file it will create a lib folder. This is not an ordinary file. The package in Dart includes this file's path.
+Let's have an example. The Dart project is in a folder named 'Hello' and you can find 'lib' folder under "Hello".So your proto auto
+generated files are in 'lib/protos'. When you try to access thosed proto files you have to call the path like this :
+
+    import 'package:Hello/protos/<your_proto_file_name>.pb.dart'
+    
+Importing Package directly call the 'lib' folder path. So you need not to call this. So basically this is how 'lib' folder is treated.
+
 
 
 
