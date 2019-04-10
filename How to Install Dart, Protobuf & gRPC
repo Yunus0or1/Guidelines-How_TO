@@ -72,7 +72,7 @@ generated files are in 'lib/protos'. When you try to access thosed proto files y
 
     import 'package:Hello/protos/<your_proto_file_name>.pb.dart'
     
-Importing Package directly call the 'lib' folder path. So you need not to call this. So basically this is how 'lib' folder is treated.
+Importing Package directly calls the 'lib' folder path. So you need not to call this. So basically this is how 'lib' folder is treated.
 
 
 
