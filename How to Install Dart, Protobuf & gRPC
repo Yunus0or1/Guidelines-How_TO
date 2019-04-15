@@ -53,7 +53,7 @@ Go to pubspec.yaml and add this under 'dev_dependencies' add this dependency :
 Now inside the Dart project create a folder named 'protos'. Write a .proto file inside it for example it is 'data.proto' . 
 And to produce ProtoBuf auto generated with gRPC files write this command for Dart :
 
-    protoc --dart_out=grpc:lib data.proto  [ . means create auto generated files in same directory as data.proto resides]
+    protoc --dart_out=grpc:lib proto/data.proto  [ 'lib' means create auto generated files in directory 'lib']
 
 --dart_out=grpc:lib means you are omitting auto generated proto files with grpc extension and the files will be saved under 
 lib/protos folder. The protos folder will be generated automatically [at least for my case]. You will find four files which have
