@@ -21,6 +21,18 @@ for example : cd /d D:/folder/firstapp and write this command
 To Hot Reload in CMD , press 'r'
 To restart the app again press 'R'
 
+
+#Get SHA-1, MD5 fingerprints
+
+Open your project in Android Studio.
+Unfold it.
+Right click on Android folder and press 'Open in Terminal'
+Press Enter in Terminal once and paste this command :
+
+    gradlew signingReport
+    
+It will show you all the fingerprints and verifications.
+
     
 
    
