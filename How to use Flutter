@@ -36,6 +36,7 @@ It will show you all the fingerprints and verifications.
 To clean cache in flutter run this command :
 
     flutter packages pub cache clean
+    pub cache repair
 
     
 
