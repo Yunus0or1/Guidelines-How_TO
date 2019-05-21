@@ -45,3 +45,10 @@ Now to upload the source code first download the Git software for windows using 
   button to addnew SSH key. Name it anything. Add the key in the Key Field.
   
   So everything is set up. Now you can clone, push or pull anything to your Git accounts using SSH key.
+  
+  
+  To rest a commit 
+  
+  	git reset --hard <SHA COMMIT ID>
+	git push origin --force
+	
