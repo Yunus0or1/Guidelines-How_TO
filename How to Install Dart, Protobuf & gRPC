@@ -24,7 +24,7 @@ Now create a new folder named ProtoC in C:/Program Files(x86) and extract the do
 You will find three new files. I have downloaded ProtoC v3.7.1 windows x64 file.
 Now copy the exe path. For my case this is : C:/Program Files(x86)/ProtoC/bin
 Open up Start and search Environment Variable. Go to Advanced->Environment Variables..
-In User variable section find PATH, double click it and click on New.
+In System variable section find PATH, double click it and click on New.
 Paste the path you copied.
 Start CMD and write this command :
     
