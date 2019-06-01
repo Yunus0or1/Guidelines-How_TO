@@ -26,7 +26,7 @@ Now to upload the source code first download the Git software for windows using 
 
 #How to setup SSH key
 
-  Type these commands
+  Type these commands [You may need both CMD and Git]
 
 	ssh-keygen //Generate RSA Key files. Press Enter only. Do not change dirrectory
 	cd C:/Users/<username>  //Browse to ssh Username folder where you can find .ssh file. Look for id_rsa and id_rsa.pub 
