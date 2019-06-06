@@ -2,10 +2,10 @@ First download Linux 64 bit server from here
 
 	https://www.teamspeak.com/en/downloads/#server
 
-Copy it to Desktop. Extract it. Rename it as TeamSpeakServer. So the directory is /home/yunus/Desktop/TeamSpeakServer/
+Copy it to Desktop. Extract it. Rename it as teamspeak. So the directory is /home/yunus/Desktop/TeamSpeakServer/
 Open a terminal inside the folder and type these commands :
 
-	sudo touch /home/yunus/Desktop/TeamSpeakServer/.ts3server_license_accepted
+	sudo touch /home/yunus/Desktop/teamspeak/.ts3server_license_accepted
 
 	sudo nano /lib/systemd/system/teamspeak.service
 
@@ -15,13 +15,13 @@ Copy these lines into teamspeak.service file :
 Description=TeamSpeak 3 Server
 After=network.target
 [Service]
-WorkingDirectory=/home/yunus/Desktop/TeamSpeakServer/
+WorkingDirectory=/home/yunus/Desktop/teamspeak/
 User=yunus
 Group=yunus
 Type=forking
-ExecStart=/home/yunus/Desktop/TeamSpeakServer/ts3server_startscript.sh start inifile=ts3server.ini
-ExecStop=/home/yunus/Desktop/TeamSpeakServer/ts3server_startscript.sh stop
-PIDFile=/home/yunus/Desktop/TeamSpeakServer/ts3server.pid
+ExecStart=/home/yunus/Desktop/teamspeak/ts3server_startscript.sh start inifile=ts3server.ini
+ExecStop=/home/yunus/Desktop/teamspeak/ts3server_startscript.sh stop
+PIDFile=/home/yunus/Desktop/teamspeak/ts3server.pid
 RestartSec=15
 Restart=always
 [Install]
