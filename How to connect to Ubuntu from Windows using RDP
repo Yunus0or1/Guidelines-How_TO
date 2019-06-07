@@ -1,0 +1,17 @@
+Open a terminal in Ubuntu 18.0 LTS and write these commands :
+
+    sudo apt-get update
+    sudo apt-get install xrdp
+    sudo apt-get install xfce4
+    sudo apt-get install xfce4
+    sudo nano /etc/xrdp/startwm.sh
+    
+    Remove the line . /etc/X11/Xsession and add the line startxfce4 and then hit ctrl+X and save the file.
+    
+    sudo service xrdp restart
+    
+ Now in Windows 10 Launch the RDP client (Remote Desktop Connection) on Windows machine and Connect to the IP address of Ubuntu Machine.
+ 
+ To scale resolution and others Click Advance on Remote Desktop Connection and set your desired settings.
+ Set Bandwidth to Broadband 2-10 MBPS to get good speed.
+    
