@@ -71,11 +71,21 @@
 	
 	When you are in Virtual Environment install Django and other libraries :	
 	
-		pip install django gunicorn
+		pip install django 
+		pip install gunicorn
+		
+		
+	Run these commands :
+	
+		pip install pymysql
+		pip install mysqlclient
+		pip install mysql-connector-python-rf
 		
 	Bind gunicorn with wsgi :
 	
 		gunicorn --bind 0.0.0.0:8000 <folder_name_where_wsgi_file_exists>.wsgi # Example ecom.wsgi or myProject.wsgi
+		
+
 
 
 ### Create a Gunicorn systemd Service File
@@ -153,6 +163,12 @@
 	
 		sudo nginx -t
 		
+	Run this command :
+		
+		sudo ln -s /etc/nginx/sites-available/ecom /etc/nginx/sites-enabled
+		
+	Go to /etc/nginx/ and delete 'Defualt' from both sites-enabled and sites-available
+		
 	Now write these commands :
 	
 		sudo systemctl restart nginx
@@ -172,13 +188,22 @@
 	
 
 
-Three Important Links 
+Four Important Links 
 
 	SSL : https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-16-04
 	
 	Nginx + Django : https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-ubuntu-16-04
 	
 	Nginx + Django : https://jee-appy.blogspot.com/2017/01/deply-django-with-nginx.html
+	
+	Start Xampp on startup
+	
+	https://salitha94.blogspot.com/2017/08/how-to-start-xampp-automatically-in.html
+	
+	
+Uninstall and Install pip3
+	
+	sudo python3 -m pip uninstall pip && sudo apt install python3-pip --reinstall
 		
 
 
