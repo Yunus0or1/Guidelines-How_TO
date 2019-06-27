@@ -15,6 +15,8 @@
 		sudo ./xampp.run -- install
 
 		 - - - - - - -  sudo /opt/lampp/manager-linux-x64.run   ---- start xampp
+		 or
+		 -------------  sudo /opt/lampp/lampp start
 		sudo /opt/lampp/xampp stop	---- stop xampp
 
 		sudo /opt/lampp/uninstall  -- uninstall xampp
