@@ -177,7 +177,10 @@
 		sudo ufw delete allow 8000
 		sudo ufw allow 'Nginx Full'
 		
-		
+### Let Python and Nginx access the staticfile and Mediafile properly. Write these commands :
+
+	sudo 777 -R staticfile	
+	sudo 777 -R mediafile	
 
 ### Installing SSL in Server Nginx
 	
@@ -210,6 +213,8 @@ Uninstall and Install pip3
 
 
 
+
+#### Debugging Rules :
 
 
 
