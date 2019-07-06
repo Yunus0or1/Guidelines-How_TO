@@ -217,6 +217,14 @@ Uninstall and Install pip3
 #### Debugging Rules :
 
 
+1. First stop nginx, gunicorn.
+2. Start server using python3 manage.py runserver.
+3. Fix what has gone wrong.
+4. Start gunicorn and type : sudo systemctl status gunicorn.
+5. If everything is ok, type : sudo systemctl start gunicorn and sudo systtemctl start nginx.
+6. HTTP Port 80 must be forwarded in TCP. Or use Default HTTP port forward. 
+7. Check if MySQL xampp database is up or not. Stop Xampp apache server.
+8. Check if ufw has all port forwarding like Port 80 and 443.
 
 
 
