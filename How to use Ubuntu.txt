@@ -33,3 +33,16 @@
         sudo fuser -k 8000/tcp
         cd /folder/to/share
         python -m SimpleHTTPServer
+        
+        
+### Find all open ports
+
+        sudo ufw status
+        sudo ufw allow 80/tcp [open a specific port]
+        sudo ufw deny 80/tcp [close a specific port]
+        sudo ufw delete deny 80/tcp [delete a role]
+
+
+
+
+
