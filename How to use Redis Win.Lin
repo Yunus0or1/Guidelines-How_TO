@@ -11,4 +11,9 @@ To restart:
 
     sudo service redis-server restart
 
+After redis server gets started in one terminal, open another terminal and write:
+
+    redis-cli
+
+You will get a redis command line interface.
 
