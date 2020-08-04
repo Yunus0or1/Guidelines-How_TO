@@ -6,5 +6,9 @@ To check if running:
  
     sudo service redis-server stop
     sudo redis-server
+    
+To restart:
+
+    sudo service redis-server restart
 
 
