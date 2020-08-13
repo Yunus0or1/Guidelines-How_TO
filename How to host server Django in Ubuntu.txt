@@ -10,7 +10,7 @@
 #### In latest update, the web application is using MySQL directly from Ubuntu. To load a database using command line:
 
 
-	mysql -u <username> -p <databasename> < <filename.sql '/home/yunus/Desktop/my.sql'>
+	sudo mysql -u <username 'root'> -p <databasename> < <filename.sql '/home/yunus/Desktop/my.sql'>
 
 
 ### Install and Run Xampp [ First Download this from their website for Linux]
