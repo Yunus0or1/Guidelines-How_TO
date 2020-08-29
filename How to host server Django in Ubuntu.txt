@@ -6,6 +6,11 @@
 	sudo systemctl stop mysql
 	sudo systemctl disable mysql
 	
+AWS mysqlclient install on virtual env
+
+	sudo apt-get install python3.6-dev libmysqlclient-dev
+	pip install mysqlclient
+
 	
 #### In latest update, the web application is using MySQL directly from Ubuntu. 
 
