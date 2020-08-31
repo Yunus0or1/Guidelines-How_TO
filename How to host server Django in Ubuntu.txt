@@ -1,6 +1,8 @@
 
 ### Install MySQL server First
 
+	https://support.rackspace.com/how-to/install-mysql-server-on-the-ubuntu-operating-system/
+
 	sudo apt-get install mysql-server
 	sudo apt-get install libmysqlclient-dev
 	sudo systemctl stop mysql
