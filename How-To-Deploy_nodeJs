@@ -8,6 +8,9 @@ Add pm2 in Systemmd
 pm2 startup
 <COPY THE COMMAND WITH THIS INSTRUCTION> --service-name <name>
 
+You may need to reboot:
+sudo reboot
+
 To check list
 pm2 list
 
