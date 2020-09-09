@@ -1,0 +1,15 @@
+
+npm install pm2 -g
+pm2 start app.js --name= <Name> --watch
+pm2 save
+
+Add pm2 in Systemmd
+
+pm2 startup
+<COPY THE COMMAND WITH THIS INSTRUCTION> --service-name <name>
+
+To check list
+pm2 list
+
+To Delete app
+pm2 delete <APP_NAME>
