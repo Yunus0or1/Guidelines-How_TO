@@ -10,8 +10,7 @@
    sudo python3 -m pip uninstall pip && sudo apt install python3-pip --reinstall
    ```
    
- - Install MySQL server First Ubuntu
-   Tutorial [link](https://support.rackspace.com/how-to/install-mysql-server-on-the-ubuntu-operating-system/)
+ - Install MySQL Ubuntu. Tutorial [link](https://support.rackspace.com/how-to/install-mysql-server-on-the-ubuntu-operating-system/).
    Commands are here.
    ```
    sudo apt-get install mysql-server
