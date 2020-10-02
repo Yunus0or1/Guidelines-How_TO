@@ -79,31 +79,26 @@
       pip install mysqlclient
       ```
 
-- To use MySQL directly from Ubuntu. 
+- To use Ubuntu MySQL. 
+  - To load a database using command line:
+    ```
+    sudo mysql -u <username 'root'> -p <databasename> < <filename.sql '/home/yunus/Desktop/my.sql'>
+    ```
+  - To access grant to 'root@localhost' use this command
+    ```
+    sudo mysql
+    ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root'; // This would set user root with password root
+    ```
+ - Install and Run [Xampp](https://www.apachefriends.org/index.html) for Linux
+   - Rename it xampp.run and type this commands :
+     ```
+     chmod 755 xampp.run
+     sudo ./xampp.run -- install
+     sudo /opt/lampp/lampp start
+     sudo /opt/lampp/xampp stop	
+     udo /opt/lampp/uninstall  
+     ```
 
-	To load a database using command line:
-
-		sudo mysql -u <username 'root'> -p <databasename> < <filename.sql '/home/yunus/Desktop/my.sql'>
-	
-	To access grant to 'root@localhost' use this command:
-
-		sudo mysql
-		ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root'; // This would set user root with password root
-
-
-### Install and Run Xampp [ First Download this from their website for Linux]
-
-	Rename it xampp.run and type this commands :
-	
-		chmod 755 xampp.run
-		sudo ./xampp.run -- install
-
-		 - - - - - - -  sudo /opt/lampp/manager-linux-x64.run   ---- start xampp
-		 or
-		 -------------  sudo /opt/lampp/lampp start
-		sudo /opt/lampp/xampp stop	---- stop xampp
-
-		sudo /opt/lampp/uninstall  -- uninstall xampp
 
 
 
