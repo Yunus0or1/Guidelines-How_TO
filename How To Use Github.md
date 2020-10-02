@@ -14,7 +14,8 @@
    git push -u origin master
    ```
 
-# To edit the existing repository firstly create a local folder in your computer.
+# To edit the existing repository 
+  - Create a local folder in your computer.
   - Right click on the local folder and start GitBash here.
   - Write the following commands :
     
@@ -25,7 +26,6 @@
     [Edit file / Add file]
     git push origin master [Upload again] 
     ```
-
 
 # How to setup SSH key
 
@@ -47,9 +47,8 @@
   - Now go to your Git accounts, it can be GitHub or BitBucket or Codemaster. Go to settings. You will find a button to addnew SSH key. Name it anything. Add the key in the Key Field.
   - So everything is set up. Now you can clone, push or pull anything to your Git accounts using SSH key.
   
-  
 # To rest a commit 
-  
+ 
   ```
   git reset --hard <SHA COMMIT ID>
   git push origin --force
