@@ -61,19 +61,20 @@ in Dart. First write this command :
     <your_proto_file_name>.pbjson.dart
    ```
 
-### Important discussion: Why 'lib' folder is crucial for Dart.
+# Important discussion: Why 'lib' folder is crucial for Dart.
 
-When you create a Dart file it will create a lib folder. This is not an ordinary file. The package in Dart includes this file's path.
-Let's have an example. The Dart project is in a folder named 'Hello' and you can find 'lib' folder under "Hello".So your proto auto
-generated files are in 'lib/protos'. When you try to access thosed proto files you have to call the path like this :
-
-    import 'package:Hello/protos/<your_proto_file_name>.pb.dart'
-    
+When you create a Dart file it will create a lib folder. This is not an ordinary file. The package in Dart includes this file's path. Let's have an example. The Dart project is in a folder named 'Hello' and you can find 'lib' folder under "Hello".So your proto auto generated files are in 'lib/protos'. When you try to access thosed proto files you have to call the path like this.
+   ```
+   import 'package:Hello/protos/<your_proto_file_name>.pb.dart'
+   ```
 Importing Package directly calls the 'lib' folder path. So you need not to call this. So basically this is how 'lib' folder is treated.
 
-Update Proto Dependency::
-
-    pub global activate protoc_plugin
+# Update Proto Dependency::
+  
+  ```
+  pub global activate protoc_plugin
+  ```
+    
 
 
 
