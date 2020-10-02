@@ -172,8 +172,6 @@
  - Now write these commands.
    ```
    sudo systemctl restart nginx
-   sudo ufw delete allow 8000
-   sudo ufw allow 'Nginx Full'
    ```
  - Let Python and Nginx access the staticfile and Mediafile properly. Write these commands.
    ```
@@ -187,7 +185,7 @@
    sudo ufw enable
    sudo ufw allow 'Nginx Full'
    sudo ufw delete allow 'Nginx HTTP'
-   sudo certbot --nginx -d habibindustry.com -d www.habibindustry.com
+   sudo certbot --nginx -d <your_domain_name>.com -d www.<your_domain_name>.com
    ```
    
    > If you are using **AWS** do not enable ***ufw***. AWS routing works as firewall.
