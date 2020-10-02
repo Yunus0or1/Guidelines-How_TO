@@ -192,8 +192,8 @@
 
 	
 # Tutorial Links
-  - [SSL Installation Nginx with Django]https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-18-04
-  - [Nginx + Django] (https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-ubuntu-16-04)
+  - [SSL Installation Nginx with Django](https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-18-04)
+  - [Nginx + Django](https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-ubuntu-16-04)
   - [Nginx + Django](https://jee-appy.blogspot.com/2017/01/deply-django-with-nginx.html)
   - [Start Xampp on startup](https://salitha94.blogspot.com/2017/08/how-to-start-xampp-automatically-in.html)
 	
