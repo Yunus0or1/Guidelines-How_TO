@@ -37,22 +37,21 @@
     - Open up **settings.py** in Django project and if you use MySQL then use these lines in DB setting : 
       ```Python
       DATABASES = {
-	  'default': {
-		'ENGINE': 'django.db.backends.mysql',
-		'NAME': 'ecom',
-		'HOST': '/opt/lampp/var/mysql/mysql.sock', #This is the mysql socket file from Xampp. Most Important
-		'PORT': '', 
-		'USER': 'root',
-		'PASSWORD': '',
-		#use 'HOST': '118.179.70.235','PORT': '3306','USER': 'ybazar','PASSWORD': 'cd30i4FyvZ8Ug2je', for remote Database and Ip would be your IP. 
-		}}
+		  'default': {
+			'ENGINE': 'django.db.backends.mysql',
+			'NAME': 'ecom',
+			'HOST': '/opt/lampp/var/mysql/mysql.sock', #This is the mysql socket file from Xampp. Most Important
+			'PORT': '', 
+			'USER': 'root',
+			'PASSWORD': '',
+			#use 'HOST': '118.179.70.235','PORT': '3306','USER': 'ybazar','PASSWORD': 'cd30i4FyvZ8Ug2je', for remote Database and Ip would be your IP. 
+			}}
       ```		
     - Add these two lines in **settings.py**.
       ```Python
       # According to your location set Static files path. Keep notice if these files are not locked. Otherwise nginx will not serve them.
-      STATIC_ROOT = '/home/yunus/Desktop/staticRootFile/'  	
-		
-      MEDIA_ROOT =os.path.join(BASE_DIR, "ecom","media")		# According to your location
+      STATIC_ROOT = '/home/<user>/Desktop/staticRootFile/'  		
+      MEDIA_ROOT =os.path.join(BASE_DIR, "<django_project_folder>","media")		# According to your location
       ```
     - Change these settings.
       ```
@@ -85,7 +84,7 @@
 - To use Ubuntu MySQL. 
   - To load a database using command line:
     ```
-    sudo mysql -u <username 'root'> -p <databasename> < <filename.sql '/home/yunus/Desktop/my.sql'>
+    sudo mysql -u <username 'root'> -p <databasename> < <put your filename.sql with path such as '/home/<user>/Desktop/my.sql'> >
     ```
   - To access grant to 'root@localhost' use this command
     ```
@@ -99,7 +98,7 @@
      sudo ./xampp.run -- install
      sudo /opt/lampp/lampp start
      sudo /opt/lampp/xampp stop	
-     udo /opt/lampp/uninstall  
+     sudo /opt/lampp/uninstall  
      ```
  - Create a Gunicorn systemd Service File to start Django server on boot.
    - Type this command.
