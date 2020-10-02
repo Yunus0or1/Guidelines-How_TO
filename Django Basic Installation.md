@@ -57,10 +57,3 @@
    ```
 
 
-To install google translator open cmd and write : pip install googletrans and then write in code : from googletrans import Translator
-New versiong of google Translator : write on cmd -> pip install goslate
-To install nltk open cmd and write : pip install nltk ; open pythonShell write : >>import nltk >>nltk.download and select all to download. It will take several minutes. 
-
-
-
-
