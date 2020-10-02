@@ -1,37 +1,35 @@
 # Dart 
 
-Install Dart from this link : https://www.dartlang.org/tools/sdk
+- Install Dart from this [link](https://www.dartlang.org/tools/sdk)
+- Install StageHand
 
-Install StageHand : 
-
-    pub global activate stagehand [only once. After installation no need to run this command again]
-
-To install Dart project from command line use these commands : 
-    
-    mkdir fancy_project [create directory]
-    cd fancy_project    [browse to directory]
-    stagehand package-simple [create Dart project which includes pubspec.yaml and many other files]
-
-
-
+  ```
+  pub global activate stagehand [only once. After installation no need to run this command again]
+  ```
+ - To install Dart project from command line use these commands.
+ 
+   ```
+   mkdir fancy_project [create directory]
+   cd fancy_project    [browse to directory]
+   stagehand package-simple [create Dart project which includes pubspec.yaml and many other files]
+   ```
+   
 # Protocol Buffer
 
-Go to this link first to download ProtoC :
-
-  https://github.com/protocolbuffers/protobuf/releases
-  
-Now create a new folder named ProtoC in C:/Program Files(x86) and extract the downloaded file in ProtoC.
-You will find three new files. I have downloaded ProtoC v3.7.1 windows x64 file.
-Now copy the exe path. For my case this is : C:/Program Files(x86)/ProtoC/bin
-Open up Start and search Environment Variable. Go to Advanced->Environment Variables..
-In System variable section find PATH, double click it and click on New.
-Paste the path you copied.
-Start CMD and write this command :
-    
-    protoc --version
-    
-It should show libprotoc 3.7.1
-You have successfully installed Protocol Buffer.
+ - Go to this [link](https://github.com/protocolbuffers/protobuf/releases) first to download ProtoC
+ - Now create a new folder named **ProtoC** in ***C:/Program Files(x86)*** and extract the downloaded file in ProtoC.
+ - You will find three new files. I have downloaded ProtoC v3.7.1 windows x64 file.
+ - Now copy the exe path. For my case this is : ***C:/Program Files(x86)/ProtoC/bin***
+ - Open up Start and search Environment Variable. Go to Advanced->Environment Variables..
+ - In System variable section find PATH, double click it and click on New.
+ - Paste the path you copied.
+ - Start CMD and write this command :
+   ``` 
+   protoc --version
+   ``` 
+   >It should show libprotoc 3.7.1
+   
+**You have successfully installed Protocol Buffer.**
 
 
 # Dart with ProtoBuf
