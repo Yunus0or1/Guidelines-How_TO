@@ -1,13 +1,12 @@
-First download Linux 64 bit server from here 
+# TeamSpeak Server Installation
 
-	https://www.teamspeak.com/en/downloads/#server
+ - First download Linux 64 bit server from [here](https://www.teamspeak.com/en/downloads/#server).
+ - Copy it to Desktop. Extract it. Rename it as teamspeak. So the directory is /home/<user>/Desktop/TeamSpeakServer/
+ - Open a terminal inside the **teamspeak** folder and type these commands.
+   ```
 
-Copy it to Desktop. Extract it. Rename it as teamspeak. So the directory is /home/yunus/Desktop/TeamSpeakServer/
-Open a terminal inside the folder and type these commands :
 
-	sudo touch /home/yunus/Desktop/teamspeak/.ts3server_license_accepted
 
-	sudo nano /lib/systemd/system/teamspeak.service
 
 Copy these lines into teamspeak.service file :
 
