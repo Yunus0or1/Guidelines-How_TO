@@ -1,17 +1,20 @@
-# Djang
-# Install MySQL server First
+# Django Production Server Host
+## Install MySQL server First Ubuntu
+   Tutorial [link](https://support.rackspace.com/how-to/install-mysql-server-on-the-ubuntu-operating-system/)
+   Commands are here.
+   ```
+   sudo apt-get install mysql-server
+   sudo apt-get install libmysqlclient-dev
+   sudo systemctl stop mysql
+   sudo systemctl disable mysql
+   ```
+   
+# AWS mysqlclient install on virtual env
+  ```
+  sudo apt-get install python3.6-dev libmysqlclient-dev
+  pip install mysqlclient
+  ```
 
-	https://support.rackspace.com/how-to/install-mysql-server-on-the-ubuntu-operating-system/
-
-	sudo apt-get install mysql-server
-	sudo apt-get install libmysqlclient-dev
-	sudo systemctl stop mysql
-	sudo systemctl disable mysql
-	
-AWS mysqlclient install on virtual env
-
-	sudo apt-get install python3.6-dev libmysqlclient-dev
-	pip install mysqlclient
 
 	
 #### In latest update, the web application is using MySQL directly from Ubuntu. 
