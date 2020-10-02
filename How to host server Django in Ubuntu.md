@@ -1,5 +1,76 @@
 # Django Production Server Host
-## Install MySQL server First Ubuntu
+ - Install Python using this command :
+   ```
+   sudo apt-get update
+   sudo apt-get upgrade
+   sudo apt-get install python3 pip3
+   ```
+   
+ - Install Virtual Environment 
+   ```
+   sudo apt-get install python3-virtualenv
+   ```
+   	
+ - Install Django with other requirements 
+
+   - Create a virtualenv inside the Django Project folder or where you want : 
+     ```
+     virtualenv -p python3 django_env
+     ```
+    - Activate it
+      ```
+      source django_env/bin/activate
+      ```
+    - Open up **settings.py** in Django project and if you use MySQL then use these lines in DB setting : 
+      ```Python
+      DATABASES = {
+		'default': {
+			'ENGINE': 'django.db.backends.mysql',
+			'NAME': 'ecom',
+			'HOST': '/opt/lampp/var/mysql/mysql.sock', #This is the mysql socket file from Xampp. Most Important
+			'PORT': '', 
+			'USER': 'root',
+			'PASSWORD': '',
+			#use 'HOST': '118.179.70.235','PORT': '3306','USER': 'ybazar','PASSWORD': 'cd30i4FyvZ8Ug2je', for Online Database and Ip would your IP. 3306 is port forwarded.
+		}}
+      ```		
+    - Add these two lines in **settings.py**.
+      ```Python
+      # According to your location set Static files path. Keep notice if these files are not locked. Otherwise nginx will not serve them.
+      STATIC_ROOT = '/home/yunus/Desktop/staticRootFile/'  	
+		
+      MEDIA_ROOT =os.path.join(BASE_DIR, "ecom","media")		# According to your location
+      ```
+    - Change these settings.
+      ```
+      DEBUG = False
+      ALLOWED_HOSTS = ['*']  # Allowed all hosts. Change it to your IP and Domain name
+      ```
+
+		
+		
+	Regardless of which version of Python you are using, when the virtual environment is activated, you should use the pip command (not pip3).
+	
+	When you are in Virtual Environment install Django and other libraries :	
+	
+		pip install django 
+		pip install gunicorn
+		
+		
+	Run these commands :
+	
+		pip install pymysql
+		pip install mysqlclient
+		pip install mysql-connector-python-rf
+		
+	Bind gunicorn with wsgi :
+	
+		gunicorn --bind 0.0.0.0:8000 <folder_name_where_wsgi_file_exists>.wsgi # Example ecom.wsgi or myProject.wsgi
+		
+
+
+   
+ - Install MySQL server First Ubuntu
    Tutorial [link](https://support.rackspace.com/how-to/install-mysql-server-on-the-ubuntu-operating-system/)
    Commands are here.
    ```
@@ -43,73 +114,10 @@
 
 		sudo /opt/lampp/uninstall  -- uninstall xampp
 
-### Install Python using this command :
 
-		sudo apt-get update
-		sudo apt-get upgrade
-		sudo apt-get install python3 pip3
 
-### Install Virtual Environment 
-
-		sudo apt-get install python3-virtualenv
-	
-	
-### Install Django with other requirements 
-
-	Create a virtualenv inside the Django Project folder or where you want : 
-	
-		virtualenv -p python3 django_env
-		
-	Activate it :
-	
-		source django_env/bin/activate
 
 	
-	Open up settings.py in Django project and if you use MySQL then use these lines in DB setting : 
-	
-		DATABASES = {
-			'default': {
-				'ENGINE': 'django.db.backends.mysql',
-				'NAME': 'ecom',
-				'HOST': '/opt/lampp/var/mysql/mysql.sock', #This is the mysql socket file from Xampp. Most Important
-				'PORT': '', 
-				'USER': 'root',
-				'PASSWORD': '',
-				#use 'HOST': '118.179.70.235','PORT': '3306','USER': 'ybazar','PASSWORD': 'cd30i4FyvZ8Ug2je', for Online Database and Ip would your IP. 3306 is port forwarded.
-			}}
-			
-	Add these two lines in settings.py :
-	
-		# According to your location set Static files path. Keep notice if these files are not locked. Otherwise nginx will not serve them.
-		STATIC_ROOT = '/home/yunus/Desktop/staticRootFile/'  	
-		
-		MEDIA_ROOT =os.path.join(BASE_DIR, "ecom","media")		# According to your location
-		
-	
-	Convert : 	
-		DEBUG = False
-		ALLOWED_HOSTS = ['*']  # Allowed all hosts. Change it to your IP and Domain name
-		
-		
-	Regardless of which version of Python you are using, when the virtual environment is activated, you should use the pip command (not pip3).
-	
-	When you are in Virtual Environment install Django and other libraries :	
-	
-		pip install django 
-		pip install gunicorn
-		
-		
-	Run these commands :
-	
-		pip install pymysql
-		pip install mysqlclient
-		pip install mysql-connector-python-rf
-		
-	Bind gunicorn with wsgi :
-	
-		gunicorn --bind 0.0.0.0:8000 <folder_name_where_wsgi_file_exists>.wsgi # Example ecom.wsgi or myProject.wsgi
-		
-
 
 
 ### Create a Gunicorn systemd Service File
