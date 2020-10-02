@@ -60,14 +60,6 @@
 To install google translator open cmd and write : pip install googletrans and then write in code : from googletrans import Translator
 New versiong of google Translator : write on cmd -> pip install goslate
 To install nltk open cmd and write : pip install nltk ; open pythonShell write : >>import nltk >>nltk.download and select all to download. It will take several minutes. 
-To install tensorflow 
-
-    -install python 3.6.2 64-bit version 
-    -run this command 
-	: pip3 install --upgrade tensorflow 
-	: pip3 install --upgrade tensorflow-gpu (it will become default tensorflow)	(May be visual C++ 2015 v3 update required)
-		-install cuda 9.0.176 (9.1 is not currently stable for windows)
-		-copy contents of cuDNN 9.0 to C:\Program Files\NVIDIA GPU Computing Toolkit
 
 
 
