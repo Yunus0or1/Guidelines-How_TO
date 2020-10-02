@@ -6,6 +6,16 @@
    sudo apt-get install python3 pip3
    ```
    
+ - Install MySQL server First Ubuntu
+   Tutorial [link](https://support.rackspace.com/how-to/install-mysql-server-on-the-ubuntu-operating-system/)
+   Commands are here.
+   ```
+   sudo apt-get install mysql-server
+   sudo apt-get install libmysqlclient-dev
+   sudo systemctl stop mysql
+   sudo systemctl disable mysql
+   ```
+   
  - Install Virtual Environment 
    ```
    sudo apt-get install python3-virtualenv
@@ -46,39 +56,27 @@
       DEBUG = False
       ALLOWED_HOSTS = ['*']  # Allowed all hosts. Change it to your IP and Domain name
       ```
-
-		
-		
-	Regardless of which version of Python you are using, when the virtual environment is activated, you should use the pip command (not pip3).
-	
-	When you are in Virtual Environment install Django and other libraries :	
-	
-		pip install django 
-		pip install gunicorn
-		
-		
-	Run these commands :
-	
-		pip install pymysql
-		pip install mysqlclient
-		pip install mysql-connector-python-rf
-		
-	Bind gunicorn with wsgi :
-	
-		gunicorn --bind 0.0.0.0:8000 <folder_name_where_wsgi_file_exists>.wsgi # Example ecom.wsgi or myProject.wsgi
-		
+    > Regardless of which version of Python you are using, when the virtual environment is activated, you should use the pip command (not pip3).
+    
+    - When you are in Virtual Environment install Django and other libraries :	
+      ```
+      pip install django 
+      pip install gunicorn
+      ```
+    - Run these commands :
+      ```
+      pip install pymysql
+      pip install mysqlclient
+      pip install mysql-connector-python-rf
+      ```
+    - Bind gunicorn with wsgi :
+      ```
+      gunicorn --bind 0.0.0.0:8000 <folder_name_where_wsgi_file_exists>.wsgi # Example ecom.wsgi or myProject.wsgi
+      ```		
 
 
    
- - Install MySQL server First Ubuntu
-   Tutorial [link](https://support.rackspace.com/how-to/install-mysql-server-on-the-ubuntu-operating-system/)
-   Commands are here.
-   ```
-   sudo apt-get install mysql-server
-   sudo apt-get install libmysqlclient-dev
-   sudo systemctl stop mysql
-   sudo systemctl disable mysql
-   ```
+
    
 # AWS mysqlclient install on virtual env
   ```
