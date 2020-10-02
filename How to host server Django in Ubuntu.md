@@ -72,21 +72,14 @@
     - Bind gunicorn with wsgi :
       ```
       gunicorn --bind 0.0.0.0:8000 <folder_name_where_wsgi_file_exists>.wsgi # Example ecom.wsgi or myProject.wsgi
-      ```		
+      ```	
+    - If any problem persists to install mysqlclient install on virtual env such as in **AWS**
+      ```
+      sudo apt-get install python3.6-dev libmysqlclient-dev
+      pip install mysqlclient
+      ```
 
-
-   
-
-   
-# AWS mysqlclient install on virtual env
-  ```
-  sudo apt-get install python3.6-dev libmysqlclient-dev
-  pip install mysqlclient
-  ```
-
-
-	
-#### In latest update, the web application is using MySQL directly from Ubuntu. 
+- To use MySQL directly from Ubuntu. 
 
 	To load a database using command line:
 
