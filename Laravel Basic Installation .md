@@ -22,7 +22,7 @@ php artisan serve
 ```
 Go to localhost:8000
     
-> To be noticed It can not be guranteed that these commands will run without any error.There is problem with different versions of Laravel.
+> To be noticed It can not be guranteed that these commands will run without any error. Problems may arise with different versions of Laravel.
 
 
 
