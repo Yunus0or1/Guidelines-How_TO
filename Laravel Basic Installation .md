@@ -1,3 +1,5 @@
+# Laravel Basic Installation
+
 ************************ Basic *********************
 Install Xaamp. Google for it.
 Install Composer. Google 'Composer Laravel' .
