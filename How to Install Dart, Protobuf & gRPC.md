@@ -34,33 +34,32 @@
 
 # Dart with ProtoBuf
 
-When installing a Dart project it will not have all the packages. So some commands must be executed in order to use Protocl Buffer
+ - When installing a Dart project it will not have all the packages. So some commands must be executed in order to use Protocl Buffer
 in Dart. First write this command :
-  
-    pub global activate protoc_plugin  [only once to dowload Procol buffer plugin for Dart]
-    
-To link all the packages between Dart and Procol Buffer use this command :
-
-    pub get [This will generate a .pacakages file which contains all local links of Dart libraries]
-    
-Go to pubspec.yaml and add this under 'dev_dependencies' add this dependency :
-
-    protobuf: ^0.10.1
-    grpc: ^1.0.2
-
-Now inside the Dart project create a folder named 'protos'. Write a .proto file inside it for example it is 'data.proto' . 
-And to produce ProtoBuf auto generated with gRPC files write this command for Dart :
-
-    protoc --dart_out=grpc:lib proto/data.proto  [ 'lib' means create auto generated files in directory 'lib']
-
---dart_out=grpc:lib means you are omitting auto generated proto files with grpc extension and the files will be saved under 
-lib/protos folder. The protos folder will be generated automatically [at least for my case]. You will find four files which have
-these extensions :
-
+   ```
+   pub global activate protoc_plugin  [only once to dowload Procol buffer plugin for Dart]
+   ```
+ - To link all the packages between Dart and Procol Buffer use this command :
+   ```
+   pub get [This will generate a .pacakages file which contains all local links of Dart libraries]
+   ```
+ - Go to pubspec.yaml and add this under 'dev_dependencies' add this dependency :
+   ```
+   protobuf: ^0.10.1
+   grpc: ^1.0.2
+   ```
+ - Now inside the Dart project create a folder named 'protos'. Write a .proto file inside it for example it is 'data.proto' . 
+ - To produce ProtoBuf auto generated with gRPC files write this command for Dart :
+   ```
+   protoc --dart_out=grpc:lib proto/data.proto  [ 'lib' means create auto generated files in directory 'lib']
+   ```
+   > --dart_out=grpc:lib means you are omitting auto generated proto files with grpc extension and the files will be saved under ***lib/protos*** folder. The protos folder will be generated automatically (at least for my case). You will find four files which have these extensions :
+   ```
     <your_proto_file_name>.pb.dart
     <your_proto_file_name>.pbenum.dart
     <your_proto_file_name>.pbgrpc.dart
     <your_proto_file_name>.pbjson.dart
+   ```
 
 ### Important discussion: Why 'lib' folder is crucial for Dart.
 
