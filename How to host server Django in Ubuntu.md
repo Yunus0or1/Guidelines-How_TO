@@ -1,5 +1,5 @@
-
-### Install MySQL server First
+# Djang
+# Install MySQL server First
 
 	https://support.rackspace.com/how-to/install-mysql-server-on-the-ubuntu-operating-system/
 
