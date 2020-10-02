@@ -14,28 +14,26 @@
    Description=TeamSpeak 3 Server
    After=network.target
    [Service]
-   WorkingDirectory=/home/yunus/Desktop/teamspeak/
-   User=yunus
-   Group=yunus
+   WorkingDirectory=/home/<user>/Desktop/teamspeak/
+   User=<user>
+   Group=<usergroup. it should be like your User>
    Type=forking
-   ExecStart=/home/yunus/Desktop/teamspeak/ts3server_startscript.sh start inifile=ts3server.ini
-   ExecStop=/home/yunus/Desktop/teamspeak/ts3server_startscript.sh stop
-   PIDFile=/home/yunus/Desktop/teamspeak/ts3server.pid
+   ExecStart=/home/<user>/Desktop/teamspeak/ts3server_startscript.sh start inifile=ts3server.ini
+   ExecStop=/home/<user>/Desktop/teamspeak/ts3server_startscript.sh stop
+   PIDFile=/home/<user>/Desktop/teamspeak/ts3server.pid
    RestartSec=15
    Restart=always
    [Install]
    WantedBy=multi-user.target
    ```
    Press CTRL+X -> Y -> Enter
-Now write these commands :
-
-	sudo systemctl enable teamspeak.service
-	sudo systemctl start teamspeak.service
-
-Check if running :
-
-	service teamspeak status
-
-
-
-Copy previous TS's sql file to get your previous Teamspeak on New Server.
+ - Now write these commands.
+   ```
+   sudo systemctl enable teamspeak.service
+   sudo systemctl start teamspeak.service
+   ```
+ - Check if running.
+   ```
+   sudo systemctl status teamspeak
+   ```
+ - Copy previous TS's sql file to get your previous Teamspeak on New Server.
