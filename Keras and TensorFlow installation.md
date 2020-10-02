@@ -18,8 +18,6 @@
  - You might need other cudNN downloads to copy-paste dll files.
    > You may find several missing dll. Look at the missing dll versioning. Example: cudart64_101.dll is from cuda 10.1. So download that Cuda and install it. Copy Paste the file to the latest Cuda. For example copy dll files from v10.1 to v11 in **C:\Program Files\NVIDIA GPU Computing Toolkit**
 
->You may find several missing dll. Just find them on internet or go to C:\Program Files\NVIDIA GPU Computing Toolkit. Find the similar dll and rename it.
-
 **This is the chart to make accurate versioning between tensorflow GPU, cuda and cudNN**
 
 >[StackOverFlow](https://stackoverflow.com/questions/50622525/which-tensorflow-and-cuda-version-combinations-are-compatible) | 
