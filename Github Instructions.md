@@ -29,7 +29,7 @@
 
 ## How to setup SSH key
 
-  - Type these commands You may need both CMD and Git
+  - Type these commands You may need both CMD and Git bash.
     
     ```
     ssh-keygen //Generate RSA Key files. Press Enter only. Do not change dirrectory
