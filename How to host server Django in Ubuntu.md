@@ -5,6 +5,10 @@
    sudo apt-get upgrade
    sudo apt-get install python3 pip3
    ```
+   Uninstall and reinstall pip3
+   ```
+   sudo python3 -m pip uninstall pip && sudo apt install python3-pip --reinstall
+   ```
    
  - Install MySQL server First Ubuntu
    Tutorial [link](https://support.rackspace.com/how-to/install-mysql-server-on-the-ubuntu-operating-system/)
@@ -112,7 +116,7 @@
      User=yunus
      Group=www-data
      WorkingDirectory=/home/<user>/Desktop/<django_project_folder>
-     ExecStart=/home/yunus/Desktop/<django_project_folder>/django_env/bin/gunicorn --access-logfile - --workers 3 --bind unix:/home/<user>/Desktop/<django_project_folder>/<any_name>.sock <django_project_folder>.wsgi:application
+     ExecStart=/home/<user>/Desktop/<django_project_folder>/django_env/bin/gunicorn --access-logfile - --workers 3 --bind unix:/home/<user>/Desktop/<django_project_folder>/<any_name>.sock <django_project_folder>.wsgi:application
      [Install]
      WantedBy=multi-user.target
      #<any_name>.sock will be created automatically
@@ -125,103 +129,80 @@
      
    > Next, check for the existence of the <any_name>.sock file within your project directory
 	
+ - Configure Nginx
+   - Install it 
+     ```
+     sudo fuser -k 80/tcp
+     sudo fuser -k 443/tcp
+     sudo apt-get install nginx
+     ```
+ - Create a coniguration file using this command with the any name.
+   ```
+   sudo nano /etc/nginx/sites-available/<file_name>
+   ```
+ - Copy-paste these and change location according to your config :
+   ```
+   server {
+		server_name <your_domain_name>.com www.<your_domain_name>.com;
 
+		location = /favicon.ico { access_log off; log_not_found off; }
+		location /static/ {
+			alias /home/<user>/Desktop/staticRootFile/;
+		}
+
+		location / {
+			include proxy_params;
+			proxy_pass http://unix:/home/<user>/Desktop/<django_project_folder>/<your_socket_name>.sock;
+		}
+
+		location /media/ {
+			alias   /home/<user>/Desktop/<django_project_folder>/<folder_name_like_your_django_project_folder>/media/;
+		}
+
+	}
+   ```
+ - Test your Nginx configuration for syntax errors by typing.
+    ```
+    sudo nginx -t
+    ```
+ - Run this command to enable that site.
+   ```
+   sudo ln -s /etc/nginx/sites-available/<your_nginx_file_name_for_that_project> /etc/nginx/sites-enabled
+   ```
+ - Go to **/etc/nginx/** and delete **Defualt** from both sites-enabled and sites-available
 		
+ - Now write these commands.
+   ```
+   sudo systemctl restart nginx
+   sudo ufw delete allow 8000
+   sudo ufw allow 'Nginx Full'
+   ```
+ - Let Python and Nginx access the staticfile and Mediafile properly. Write these commands.
+   ```
+   sudo 777 -R staticfile
+   sudo 777 -R mediafile
+   ```
+ - Install SSL in Server Nginx
+   ```
+   sudo add-apt-repository ppa:certbot/certbot
+   sudo apt-get install python-certbot-nginx
+   sudo ufw enable
+   sudo ufw allow 'Nginx Full'
+   sudo ufw delete allow 'Nginx HTTP'
+   sudo certbot --nginx -d habibindustry.com -d www.habibindustry.com
+   ```
+   
+   > If you are using **AWS** do not enable ***ufw***. AWS routing works as firewall.
 
 	
+# Tutorial Links
+  - [SSL Installation Nginx with Django]https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-18-04
+  - [Nginx + Django] (https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-ubuntu-16-04)
+  - [Nginx + Django](https://jee-appy.blogspot.com/2017/01/deply-django-with-nginx.html)
+  - [Start Xampp on startup](https://salitha94.blogspot.com/2017/08/how-to-start-xampp-automatically-in.html)
 	
-
-### Configure Nginx
-
-	Install it 
-
-		sudo fuser -k 80/tcp
-		sudo fuser -k 443/tcp
-		
-		sudo apt-get install nginx
-		
-		
-	Create a coniguration file using this command with the project name :
-	
-		sudo nano /etc/nginx/sites-available/ecom
-		
-		
-	Copy-paste these and change location according to your config :
-	
-		server {
-				server_name habibindustry.com www.habibindustry.com;
-
-				location = /favicon.ico { access_log off; log_not_found off; }
-				location /static/ {
-					alias /home/yunus/Desktop/staticRootFile/;
-				}
-
-				location / {
-					include proxy_params;
-					proxy_pass http://unix:/home/yunus/Desktop/ecom/ecom.sock;
-				}
-
-				location /media/ {
-					alias   /home/yunus/Desktop/ecom/ecom/media/;
-				}
-	
-			}
-
-
-	Test your Nginx configuration for syntax errors by typing:
-	
-		sudo nginx -t
-		
-	Run this command :
-		
-		sudo ln -s /etc/nginx/sites-available/ecom /etc/nginx/sites-enabled
-		
-	Go to /etc/nginx/ and delete 'Defualt' from both sites-enabled and sites-available
-		
-	Now write these commands :
-	
-		sudo systemctl restart nginx
-		sudo ufw delete allow 8000
-		sudo ufw allow 'Nginx Full'
-		
-### Let Python and Nginx access the staticfile and Mediafile properly. Write these commands :
-
-	sudo 777 -R staticfile	
-	sudo 777 -R mediafile	
-
-### Installing SSL in Server Nginx
-	
-	sudo add-apt-repository ppa:certbot/certbot
-	sudo apt-get install python-certbot-nginx
-	sudo ufw enable
-	sudo ufw allow 'Nginx Full'
-	sudo ufw delete allow 'Nginx HTTP'
-	sudo certbot --nginx -d habibindustry.com -d www.habibindustry.com
-	
-
-
-Four Important Links 
-
-	SSL : https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-18-04
-	
-	Nginx + Django : https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-ubuntu-16-04
-	
-	Nginx + Django : https://jee-appy.blogspot.com/2017/01/deply-django-with-nginx.html
-	
-	Start Xampp on startup
-	
-	https://salitha94.blogspot.com/2017/08/how-to-start-xampp-automatically-in.html
-	
-	
-Uninstall and Install pip3
-	
-	sudo python3 -m pip uninstall pip && sudo apt install python3-pip --reinstall
-		
-
-
-
-
-#### Debugging Rules :
+	 
+# Debugging Rules :
 
 
 1. First stop nginx, gunicorn.
