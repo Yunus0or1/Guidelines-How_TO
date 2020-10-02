@@ -34,14 +34,14 @@
     - Open up **settings.py** in Django project and if you use MySQL then use these lines in DB setting : 
       ```Python
       DATABASES = {
-		'default': {
-			'ENGINE': 'django.db.backends.mysql',
-			'NAME': 'ecom',
-			'HOST': '/opt/lampp/var/mysql/mysql.sock', #This is the mysql socket file from Xampp. Most Important
-			'PORT': '', 
-			'USER': 'root',
-			'PASSWORD': '',
-			#use 'HOST': '118.179.70.235','PORT': '3306','USER': 'ybazar','PASSWORD': 'cd30i4FyvZ8Ug2je', for Online Database and Ip would your IP. 3306 is port forwarded.
+	  'default': {
+		'ENGINE': 'django.db.backends.mysql',
+		'NAME': 'ecom',
+		'HOST': '/opt/lampp/var/mysql/mysql.sock', #This is the mysql socket file from Xampp. Most Important
+		'PORT': '', 
+		'USER': 'root',
+		'PASSWORD': '',
+		#use 'HOST': '118.179.70.235','PORT': '3306','USER': 'ybazar','PASSWORD': 'cd30i4FyvZ8Ug2je', for remote Database and Ip would be your IP. 
 		}}
       ```		
     - Add these two lines in **settings.py**.
@@ -89,7 +89,7 @@
     sudo mysql
     ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root'; // This would set user root with password root
     ```
- - Install and Run [Xampp](https://www.apachefriends.org/index.html) for Linux
+ - Install and Run [Xampp](https://www.apachefriends.org/index.html) for Linux.
    - Rename it xampp.run and type this commands :
      ```
      chmod 755 xampp.run
@@ -98,45 +98,36 @@
      sudo /opt/lampp/xampp stop	
      udo /opt/lampp/uninstall  
      ```
-
-
-
-
-
+ - Create a Gunicorn systemd Service File to start Django server on boot.
+   - Type this command.
+     ```
+     sudo nano /etc/systemd/system/gunicorn.service
+     ```
+   - Copy paste these lines and set **project locations** according to your config :
+     ```
+     [Unit]
+     Description=gunicorn daemon
+     After=network.target
+     [Service]
+     User=yunus
+     Group=www-data
+     WorkingDirectory=/home/<user>/Desktop/<django_project_folder>
+     ExecStart=/home/yunus/Desktop/<django_project_folder>/django_env/bin/gunicorn --access-logfile - --workers 3 --bind unix:/home/<user>/Desktop/<django_project_folder>/<any_name>.sock <django_project_folder>.wsgi:application
+     [Install]
+     WantedBy=multi-user.target
+     #<any_name>.sock will be created automatically
+     ```
+   - Now write these.
+     ```
+     sudo systemctl start gunicorn
+     sudo systemctl enable gunicorn
+     ```
+     
+   > Next, check for the existence of the <any_name>.sock file within your project directory
 	
 
-
-### Create a Gunicorn systemd Service File
-
-
-	sudo nano /etc/systemd/system/gunicorn.service
-	
-	
-	Copy paste these lines and set locations according to your config :
-	
-		[Unit]
-		Description=gunicorn daemon
-		After=network.target
-
-		[Service]
-		User=yunus
-		Group=www-data
-		WorkingDirectory=/home/yunus/Desktop/ecom
-		ExecStart=/home/yunus/Desktop/ecom/django_env/bin/gunicorn --access-logfile - --workers 3 --bind unix:/home/yunus/Desktop/ecom/ecom.sock ecom.wsgi:application
-
-		[Install]
-		WantedBy=multi-user.target
-
-
-		#ecom.sock will be created automatically
 		
-		
-	Now write these :
-	
-		sudo systemctl start gunicorn
-		sudo systemctl enable gunicorn
-		
-	Next, check for the existence of the ecom.sock file within your project directory // Or whatever you_name_it.sock exists
+
 	
 	
 
