@@ -1,6 +1,6 @@
 # Linux Installation
 
- -In linux use this command to install.
+ - In linux use this command to install.
   ```
   sudo apt-get install redis-server
   ```
