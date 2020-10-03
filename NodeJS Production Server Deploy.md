@@ -9,9 +9,7 @@
  npm install
  sudo npm install pm2 -g
  pm2 start index.js --name=<any_name> --watch --ignore-watch="node_modules"
- pm2 startup 
- > copy paste the generated line such as
- sudo env PATH=$PATH:/usr/bin /usr/local/lib/node_modules/pm2/bin/pm2 startup systemd -u ubuntu --hp /home/ubuntu --service-name=<your_name>)
+ pm2 startup  (copy paste the generated line such as sudo env PATH=$PATH:/usr/bin /usr/local/lib/node_modules/pm2/bin/pm2 startup systemd -u ubuntu --hp /home/ubuntu --service-name=<your_name>)
  pm2 save
  sudo reboot
  ```
