@@ -1,41 +1,30 @@
 
 # Installation
 
- Type these commands.
+ - Type these commands.
  
- ```
- cd <where index.js or server.js located>
- sudo apt install npm
- npm install
- sudo npm install pm2 -g
- pm2 start index.js --name=<any_name> --watch --ignore-watch="node_modules"
- pm2 startup  (copy paste the generated line such as sudo env PATH=$PATH:/usr/bin /usr/local/lib/node_modules/pm2/bin/pm2 startup systemd -u ubuntu --hp /home/ubuntu --service-name=<your_name>)
- pm2 save
- sudo reboot
- ```
+   ```
+   cd <where index.js or server.js located>
+   sudo apt install npm
+   npm install
+   sudo npm install pm2 -g
+   pm2 start index.js --name=<any_name> --watch --ignore-watch="node_modules"
+   pm2 startup  (copy paste the generated line such as sudo env PATH=$PATH:/usr/bin /usr/local/lib/node_modules/pm2/bin/pm2 startup systemd -u ubuntu --hp /home/ubuntu --service-name=<your_name>)
+   pm2 save
+   sudo reboot
+   ```
+ - To check list.
+   ```
+   pm2 list
+   ```
+ - To Delete app.
+   ```
+   pm2 delete <APP_NAME>
+   ```
 
+# ADD NGINX with pm2
 
-npm install pm2 -g
-pm2 start app.js --name= <Name> --watch
-pm2 save
-
-Add pm2 in Systemmd
-
-pm2 startup
-<COPY THE COMMAND WITH THIS INSTRUCTION> --service-name <name>
-
-You may need to reboot:
-sudo reboot
-
-To check list
-pm2 list
-
-To Delete app
-pm2 delete <APP_NAME>
-
-
-
-ADD NGINX
+ > pm2 loads the payment server locally in any port such as 8586. Nginx is connected with the pm2 server in any port such as 8587. So we access 8587 port from outside.
 
 sudo nano /etc/nginx/sites-available/<Name>
 
@@ -46,22 +35,52 @@ upstream <Name> {
 }
  
 # Server on port 80
-server {
-    listen 80;
-    server_name hakase-node.co;
-    root /home/yume/hakase-app;
- 
-    location / {
-        # Proxy_pass configuration
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header Host $http_host;
-        proxy_set_header X-NginX-Proxy true;
-        proxy_http_version 1.1;
-        proxy_set_header Upgrade $http_upgrade;
-        proxy_set_header Connection "upgrade";
-        proxy_max_temp_file_size 0;
-        proxy_pass http://hakase-app/;
-        proxy_redirect off;
-        proxy_read_timeout 240s;
+  
+  - First type this command.
+    ```
+    sudo nano /etc/nginx/sites-available/ezeedrop_payment
+    ```
+  - Copy paste these.
+    ```
+    upstream my_local_server {
+       server 127.0.0.1:8586;
+       keepalive 64;
     }
-}
+
+      server {
+          listen 8587;
+          server_name <server_ip>;
+          root </home/location where index.js or server.js is locatated>;
+
+          location / {
+              proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+              proxy_set_header X-Real-IP $remote_addr;
+              proxy_set_header Host $http_host;
+
+              proxy_http_version 1.1;
+              proxy_set_header Upgrade $http_upgrade;
+              proxy_set_header Connection "upgrade";
+
+              proxy_pass http://my_local_server/;
+              proxy_redirect off;
+              proxy_read_timeout 240s;
+      }
+
+    }
+
+
+    ```
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
