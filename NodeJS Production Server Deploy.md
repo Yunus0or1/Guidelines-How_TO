@@ -22,7 +22,7 @@
    pm2 delete <APP_NAME>
    ```
 
-# ADD NGINX with pm2
+# Add Nginx with pm2
 
  > pm2 loads the payment server locally in any port such as 8586. Nginx is connected with the pm2 server in any port such as 8587. So we access 8587 port from outside.
   
