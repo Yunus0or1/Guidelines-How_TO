@@ -1,9 +1,9 @@
 # Linux Installation
 
  - In linux use this command to install.
-  ```
-  sudo apt-get install redis-server
-  ```
+   ```
+   sudo apt-get install redis-server
+   ```
  - To check if running.
    ```
    sudo service redis-server stop
