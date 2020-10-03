@@ -25,16 +25,6 @@
 # ADD NGINX with pm2
 
  > pm2 loads the payment server locally in any port such as 8586. Nginx is connected with the pm2 server in any port such as 8587. So we access 8587 port from outside.
-
-sudo nano /etc/nginx/sites-available/<Name>
-
-upstream <Name> {
-    # Nodejs app upstream
-    server 127.0.0.1:3000;
-    keepalive 64;
-}
- 
-# Server on port 80
   
   - First type this command.
     ```
