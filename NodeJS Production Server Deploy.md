@@ -28,7 +28,7 @@
   
   - First type this command.
     ```
-    sudo nano /etc/nginx/sites-available/ezeedrop_payment
+    sudo nano /etc/nginx/sites-available/<any_file_name>
     ```
   - Copy paste these.
     ```
