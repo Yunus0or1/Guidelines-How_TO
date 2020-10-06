@@ -114,7 +114,7 @@
      User=yunus
      Group=www-data
      WorkingDirectory=/home/<user>/Desktop/<django_project_folder>
-     ExecStart=/home/<user>/Desktop/<django_project_folder>/django_env/bin/gunicorn --access-logfile - --workers 3 --bind unix:/home/<user>/Desktop/<django_project_folder>/<any_name>.sock <django_project_folder>.wsgi:application
+     ExecStart=/home/<user>/Desktop/<django_project_folder>/django_env/bin/gunicorn --access-logfile - --workers 3 --timeout 300 --bind unix:/home/<user>/Desktop/<django_project_folder>/<any_name>.sock <django_project_folder>.wsgi:application
      [Install]
      WantedBy=multi-user.target
      #<any_name>.sock will be created automatically
