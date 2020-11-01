@@ -159,14 +159,14 @@
 
 	}
    ```
- - Test your Nginx configuration for syntax errors by typing.
-    ```
-    sudo nginx -t
-    ```
  - Run this command to enable that site.
    ```
    sudo ln -s /etc/nginx/sites-available/<your_nginx_file_name_for_that_project> /etc/nginx/sites-enabled
    ```
+ - Test your Nginx configuration for syntax errors by typing.
+    ```
+    sudo nginx -t
+    ```
  - Go to **/etc/nginx/** and delete **Defualt** from both sites-enabled and sites-available
 		
  - Now write these commands.
