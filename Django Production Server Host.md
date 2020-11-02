@@ -30,9 +30,13 @@
      ```
      virtualenv -p python3 django_env
      ```
-    - Activate it
+    - Activate it(Linux)
       ```
       source django_env/bin/activate
+      ```
+    - Activate it(Windows)
+      ```
+      django_env\Scripts\activate
       ```
     - Open up **settings.py** in Django project and if you use MySQL then use these lines in DB setting : 
       ```Python
