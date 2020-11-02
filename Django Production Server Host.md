@@ -30,11 +30,11 @@
      ```
      virtualenv -p python3 django_env
      ```
-    - Activate it(Linux)
+    - Activate it (Linux)
       ```
       source django_env/bin/activate
       ```
-    - Activate it(Windows)
+    - Activate it (Windows)
       ```
       django_env\Scripts\activate
       ```
