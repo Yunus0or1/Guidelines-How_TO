@@ -184,6 +184,7 @@
    ```
  - Install SSL in Server Nginx
    ```
+   sudo apt-get install software-properties-common
    sudo add-apt-repository ppa:certbot/certbot
    sudo apt-get install python-certbot-nginx
    sudo ufw enable
