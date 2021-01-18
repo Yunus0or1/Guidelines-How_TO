@@ -1,6 +1,7 @@
 # Django Production Server Host
  - Install Python using this command :
    ```
+   sudo add-apt-repository universe
    sudo apt-get update
    sudo apt-get upgrade
    sudo apt-get install python3 pip3
@@ -15,8 +16,8 @@
    ```
    sudo apt-get install mysql-server
    sudo apt-get install libmysqlclient-dev
-   sudo systemctl stop mysql
-   sudo systemctl disable mysql
+   sudo systemctl stop mysql (To Stop)
+   sudo systemctl disable mysql (To disable auto start)
    ```
    
  - Install Virtual Environment 
@@ -89,6 +90,11 @@
   - To load a database using command line:
     ```
     sudo mysql -u <username 'root'> -p <databasename> < <put your filename.sql with path such as '/home/<user>/Desktop/my.sql'> >
+    ```
+    Or
+    ```
+    mysql> use your_db_name;
+    mysql> source /home/path_to_db.sql;
     ```
   - To access grant to 'root@localhost' use this command
     ```
