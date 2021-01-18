@@ -17,6 +17,11 @@
   sudo apt-get install zip
   zip -r example.zip original_folder [Here example.zip will be the zipped file while “original_folder” is the main file]
   ```
+  
+# Download a file using HFS
+  ```
+  curl http://IP:PORT/FILE.EXT --output yourFile.txt
+  ```
       
 # Send file by Python Server.
 
