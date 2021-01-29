@@ -24,7 +24,7 @@
   ```
   server {
           listen 80;
-          server_name frontend.envygroupbd.com;
+          server_name <domain name or IP>;
 
           location / {
 
