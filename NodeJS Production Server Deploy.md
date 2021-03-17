@@ -4,8 +4,9 @@
  - Type these commands.
  
    ```
-   cd <where index.js or server.js located>
+   sudo apt update
    sudo apt install npm
+   cd <where index.js or server.js located>
    npm install
    sudo npm install pm2 -g
    pm2 start index.js --name=<any_name> --watch --ignore-watch="node_modules"
