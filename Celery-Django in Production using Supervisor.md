@@ -51,15 +51,31 @@
    ```   
  - Visit **settings..py** file in the same directory and paste these
    ```
-   BROKER_URL = 'redis://localhost:6379'
+   CELERY_BROKER_URL = 'redis://localhost:6379'
    CELERY_RESULT_BACKEND = 'redis://127.0.0.1:6379/'
    CELERY_ACCEPT_CONTENT = ['application/json']
    CELERY_TASK_SERIALIZER = 'json'
    CELERY_RESULT_SERIALIZER = 'json'
    CELERY_TIMEZONE = 'UTC'
    ```   
-
-
+ - Use this command to check if celery is working
+   ```
+   celery -A your_project_name worker -l info
+   ```
+ - Use this command to check if celery beat also known as periodic scheduler is working
+   ```
+   celery -A your_project_name beat -l info
+   ```
+ - Now create an Django app, register it in **settings.py** and now inside the app folder create a file named **tasks.py**. In this file you have to add all your celery tasks
+   ```
+   from __future__ import absolute_import, unicode_literals
+   from celery import shared_task
+   
+   
+   @shared_task(name = "print_msg_main")
+   def print_message(message, *args, **kwargs):
+    print(f"Celery is working!! Message is {message}")
+   ```
 
 
 
