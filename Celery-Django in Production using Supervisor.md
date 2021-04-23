@@ -22,6 +22,7 @@
    # os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'ezeedrop_scheduler.settings')
 
    app = Celery('any_name')
+   # app = Celery('ezeedrop_scheduler',broker='redis://127.0.0.1:6379/')
 
    # Using a string here means the worker doesn't have to serialize
    # the configuration object to child processes.
