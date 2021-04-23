@@ -18,9 +18,10 @@
     from celery import Celery
 
     # set the default Django settings module for the 'celery' program.
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'simpletask.settings')
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'project_name.settings')
+    # os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'ezeedrop_scheduler.settings')
 
-    app = Celery('simpletask')
+    app = Celery('any_name')
 
     # Using a string here means the worker doesn't have to serialize
     # the configuration object to child processes.
