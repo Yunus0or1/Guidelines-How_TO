@@ -39,55 +39,60 @@
    	print('Request: {0!r}'.format(self.request))
    ```   
    
- - Run the command to create project.
+ - Visit **__init__.py** file in the same directory and paste these
    ```
-   Django-admin startproject prac
+   from __future__ import absolute_import
+
+   # This will make sure the app is always imported when
+   # Django starts so that shared_task will use this app.
+   from .celery import app as celery_app
+
+   __all__ = ('celery_app',)
+   ```   
+ - Visit **settings..py** file in the same directory and paste these
    ```
-   
- - To run the server go to the directory of the file and type this command.
-   ```
-   python manage.py runserver
-   ```
- - To create app go to the directory of the file and type this command.
-   ```
-   python manage.py startapp hello
-   ```
- - To render template first create a folder anywhere and then go to **settings.py **, find TEMPLATES and set the directory
- - To migrate database use these commands.
-   ```
-   python manage.py makemigrations
-   python manage.py migrate
-   ```
- - To istall Database xampp in Django :
-   - Run these commands
-     ```
-     pip install MySQL-python
-     pip install pymysql
-     pip install mysqlclient
-     pip install mysql-connector-python-rf
-     pip install "mysqlclient==1.3.12"
-     ```
-     
-     ```Python
-     DATABASES = {
-		'default':  
-			 {
-		'ENGINE': 'django.db.backends.mysql',
-		'NAME': 'DB_NAME',
-		'HOST': '127.0.0.1',
-		'PORT': '3306',
-		'USER': 'root',
-		'PASSWORD': '',
-			  }  
-		 }
-     ```
- - To add ImageField in Django Model run this command.
-   ```
-   pip install pillow
-   ```
- - To install Crypto package try this.
-   ```
-   pip install pycryptodome  / pip install pycrypto
-   ```
+   BROKER_URL = 'redis://localhost:6379'
+   CELERY_RESULT_BACKEND = 'redis://127.0.0.1:6379/'
+   CELERY_ACCEPT_CONTENT = ['application/json']
+   CELERY_TASK_SERIALIZER = 'json'
+   CELERY_RESULT_SERIALIZER = 'json'
+   CELERY_TIMEZONE = 'UTC'
+   ```   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
