@@ -149,8 +149,7 @@
   sudo supervisorctl start app2
   ```
 
-
-
+[Tutorial Link](https://nickmccullum.com/celery-django-periodic-tasks/) | [Supervisor Commands](https://www.onurguzel.com/supervisord-restarting-and-reloading/)
 
 
 
