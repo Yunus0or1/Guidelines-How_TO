@@ -138,6 +138,16 @@
    redirect_stderr=true
    wantedBy=multi-user.target
    ```
+- Supervisor commands to check
+  ```
+  sudo service supervisor restart
+  sudo supervisorctl restart <name>
+  sudo service supervisor stop
+  sudo service supervisor start
+  sudo supervisorctl reread
+  sudo supervisorctl update
+  sudo supervisorctl start app2
+  ```
 
 
 
