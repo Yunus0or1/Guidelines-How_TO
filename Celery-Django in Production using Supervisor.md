@@ -76,9 +76,27 @@
    def print_message(message, *args, **kwargs):
     print(f"Celery is working!! Message is {message}")
    ```
-
-
-
+  - In the **celery.py** file, add these lines to do task periodically
+   ```
+   app.conf.beat_schedule = {
+       'print-message-ten-seconds': {
+           # Task Name (Name Specified in Decorator)
+           'task': 'print_msg_main',  
+           # Schedule      
+           'schedule': 10.0,
+           # Function Arguments 
+           'args': ("Hello",) 
+       },
+   } 
+   ```
+  - Now write these two commands to start beat and worker
+   ```
+   celery -A proj_name beat -l info --logfile=celery.beat.log
+   celery -A proj_name worker -l info --logfile=celery.log
+   ```
+   
+   This would start the tasks in period motion
+  
 
 
 
