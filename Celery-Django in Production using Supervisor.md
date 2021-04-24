@@ -100,7 +100,10 @@
  - To install Celery in production run this first.
    ```
    sudo apt-get install supervisor
+   sudo supervisord
    ```
+   Usually supervisor gets auto started. So using ***sudo supervisord*** command may throw error on same port opening.
+   
  - Run this command to open conf file for celery worker
    ```
    sudo nano /etc/supervisor/conf.d/app-name-worker.conf
