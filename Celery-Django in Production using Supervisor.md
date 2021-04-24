@@ -96,9 +96,41 @@
    ```
    
    This would start the tasks in period motion
-  
 
-
+ - To install Celery in production run this first.
+   ```
+   sudo apt-get install supervisor
+   ```
+ - Run this command to open conf file for celery worker
+   ```
+   sudo nano /etc/supervisor/conf.d/app_name_worker.conf
+   ```
+ - Edit and Copy these lines
+   ```
+   [program:your_app_name]
+   command=/path_to_virtual_env/celery worker -A your_project_name --loglevel=INFO
+   directory=/path/to/workflow/your_project_name/
+   user=www-data
+   autostart=true
+   autorestart=true
+   stdout_logfile=/path/to/workflow/your_project_name/logs/celeryd.log
+   redirect_stderr=true
+   ```
+ - Run this command to open conf file for celery beat
+   ```
+   sudo nano /etc/supervisor/conf.d/app_name_beat.conf
+   ```
+ - Edit and Copy these lines
+   ```
+   [program:your_app_name]
+   command=/path_to_virtual_env/celery worker -A your_project_name --loglevel=INFO
+   directory=/path/to/workflow/your_project_name/
+   user=www-data
+   autostart=true
+   autorestart=true
+   stdout_logfile=/path/to/workflow/your_project_name/logs/celeryd.log
+   redirect_stderr=true
+   ```
 
 
 
