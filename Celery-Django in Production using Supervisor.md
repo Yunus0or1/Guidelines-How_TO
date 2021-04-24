@@ -147,6 +147,7 @@
   sudo supervisorctl reread
   sudo supervisorctl update
   sudo supervisorctl start app2
+  sudo supervisorctl status app2
   ```
 
 [Tutorial Link](https://nickmccullum.com/celery-django-periodic-tasks/) | [Supervisor Commands](https://www.onurguzel.com/supervisord-restarting-and-reloading/) | [ReadMe On Supervisor](https://gist.github.com/mau21mau/9371a95b7c14ddf7000c1827b7693801)
