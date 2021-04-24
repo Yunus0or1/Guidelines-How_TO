@@ -89,7 +89,7 @@
        },
    } 
    ```
- - Now write these two commands to start beat and worker
+ - Now write these two commands to start beat and worker. These two must be started simultaneously. Beat would push task to worker and Worker would execute it.
    ```
    celery -A proj_name beat -l info --logfile=celery.beat.log
    celery -A proj_name worker -l info --logfile=celery.log
