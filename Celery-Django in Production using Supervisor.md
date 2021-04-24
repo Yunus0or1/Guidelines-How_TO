@@ -103,33 +103,37 @@
    ```
  - Run this command to open conf file for celery worker
    ```
-   sudo nano /etc/supervisor/conf.d/app_name_worker.conf
+   sudo nano /etc/supervisor/conf.d/app-name-worker.conf
    ```
  - Edit and Copy these lines
    ```
-   [program:your_app_name]
-   command=/path_to_virtual_env/celery worker -A your_project_name --loglevel=INFO
-   directory=/path/to/workflow/your_project_name/
-   user=www-data
+   [program:your-app-name-worker]
+   command=/path_to_virtual_env/bin/celery -A project_name worker -l info
+   directory=/path_to_your_project_name/
+   user= <root_user_name>
+   group=www-data
    autostart=true
    autorestart=true
-   stdout_logfile=/path/to/workflow/your_project_name/logs/celeryd.log
+   stdout_logfile=/path_to_store_log/celery-worker.log
    redirect_stderr=true
+   wantedBy=multi-user.target
    ```
  - Run this command to open conf file for celery beat
    ```
-   sudo nano /etc/supervisor/conf.d/app_name_beat.conf
+   sudo nano /etc/supervisor/conf.d/app-name-beat.conf
    ```
  - Edit and Copy these lines
    ```
-   [program:your_app_name]
-   command=/path_to_virtual_env/celery worker -A your_project_name --loglevel=INFO
-   directory=/path/to/workflow/your_project_name/
-   user=www-data
+   [program:your-app-name-beat]
+   command=/path_to_virtual_env/celery -A project_name beat -l info
+   directory=/path_to_your_project_name/
+   user= <root_user_name>
+   group=www-data
    autostart=true
    autorestart=true
-   stdout_logfile=/path/to/workflow/your_project_name/logs/celeryd.log
+   stdout_logfile=/path_to_store_log/celery-beat.log
    redirect_stderr=true
+   wantedBy=multi-user.target
    ```
 
 
