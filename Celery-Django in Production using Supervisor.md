@@ -76,7 +76,7 @@
    def print_message(message, *args, **kwargs):
     print(f"Celery is working!! Message is {message}")
    ```
-  - In the **celery.py** file, add these lines to do task periodically
+ - In the **celery.py** file, add these lines to do task periodically
    ```
    app.conf.beat_schedule = {
        'print-message-ten-seconds': {
@@ -89,7 +89,7 @@
        },
    } 
    ```
-  - Now write these two commands to start beat and worker
+ - Now write these two commands to start beat and worker
    ```
    celery -A proj_name beat -l info --logfile=celery.beat.log
    celery -A proj_name worker -l info --logfile=celery.log
