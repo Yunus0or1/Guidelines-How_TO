@@ -2,6 +2,10 @@
 # Installation
 
  - Type these commands.
+
+   ```
+   Install different version of Node. [StackOverFlow](https://askubuntu.com/questions/426750/how-can-i-update-my-nodejs-to-the-latest-version)
+   ```
  
    ```
    sudo apt update
@@ -41,7 +45,6 @@
       server {
           listen 8587;
           server_name <server_ip>;
-          root </home/location where index.js or server.js is locatated/>;
 
           location / {
               proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
