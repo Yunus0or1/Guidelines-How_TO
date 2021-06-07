@@ -4,7 +4,9 @@
  - Type these commands.
 
    ```
-   Install different version of Node. [StackOverFlow](https://askubuntu.com/questions/426750/how-can-i-update-my-nodejs-to-the-latest-version)
+   Install different version of Node. 
+   [Start Xampp on startup](https://salitha94.blogspot.com/2017/08/how-to-start-xampp-automatically-in.html)
+   [StackOverFlow](https://askubuntu.com/questions/426750/how-can-i-update-my-nodejs-to-the-latest-version)
    ```
  
    ```
