@@ -1,13 +1,11 @@
 
 # Installation
 
+ - Install different version of Node.
+   [StackOverFlow](https://askubuntu.com/questions/426750/how-can-i-update-my-nodejs-to-the-latest-version)
+
  - Type these commands.
 
-   ```
-   Install different version of Node. 
-   ```
-   [StackOverFlow](https://askubuntu.com/questions/426750/how-can-i-update-my-nodejs-to-the-latest-version)
- 
    ```
    sudo apt update
    sudo apt install npm
