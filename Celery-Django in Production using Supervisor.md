@@ -95,6 +95,11 @@
    celery -A proj_name worker -l info --logfile=celery.log
    ```
    
+  - Sometime worker in windows may throw ValueError due to OS. So run this worker command instead of the first one for the worker.
+   ```
+   celery -A proj_name worker --pool=solo -l info --logfile=celery.log
+   ```
+   
    This would start the tasks in period motion
 
  - To install Celery in production run this first.
