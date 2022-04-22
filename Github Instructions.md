@@ -51,7 +51,7 @@
  
   ```
   git reset --hard <SHA COMMIT ID>
-  git push origin --force
+  git push --force origin master
   ```
 
 	
