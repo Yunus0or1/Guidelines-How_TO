@@ -32,3 +32,15 @@
       discard-paths: no
       base-directory : ./
     ```
+  - Now the ARN policy does not include KMS key policy, which you would have to include in the IAM policy. Go to IAM policy, open the policy that is attached with CodePipeline and edit the policy by adding this new policy.
+    ```
+    {
+    "Effect": "Allow",
+    "Action": [
+        "kms:Encrypt",
+        "kms:DescribeKey",
+        "kms:Decrypt"
+    ],
+    "Resource": "*"
+    }
+    ```
