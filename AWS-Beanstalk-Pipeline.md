@@ -51,5 +51,5 @@
         "ssm:GetParameter"
     ],
     "Resource": "*"
-    }
+    },
     ```
