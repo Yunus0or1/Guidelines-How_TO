@@ -5,9 +5,11 @@
 - Beanstalk:
   - Follow the normal flow of the setup. Always select the default options.
   - When asked to deploy code, always remeber to use **.zip** format, **DO NOT USE .rar FORMAT**.
+  - After successfull primary manual deployment, add all the Environment variable.
 
 - CodePipeline
   - Follow the normal flow of the setup. Always select the default options.
+  - Do not add any Environment Variable here. I do not what these do. 
   - The CodePipeline would create an ARN policy to access all the resources. This is very important.
   - There must be a **buildspec.yml** file to activate 
 
