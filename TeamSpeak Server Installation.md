@@ -4,7 +4,7 @@
  - Copy it to Desktop. Extract it. Rename it as teamspeak.
  - Open a terminal inside the **teamspeak** folder and type these commands.
    ```
-   sudo touch /home/yunus/Desktop/teamspeak/.ts3server_license_accepted
+   sudo touch /home/<user>/Desktop/teamspeak/.ts3server_license_accepted
    sudo nano /lib/systemd/system/teamspeak.service
    ```
 
